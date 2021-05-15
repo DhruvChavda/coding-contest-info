@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/coding-contest-info/static/css/main.9d5b29c0.chunk.css",
+    "main.js": "/coding-contest-info/static/js/main.6d527b51.chunk.js",
+    "main.js.map": "/coding-contest-info/static/js/main.6d527b51.chunk.js.map",
+    "runtime-main.js": "/coding-contest-info/static/js/runtime-main.03b69629.js",
+    "runtime-main.js.map": "/coding-contest-info/static/js/runtime-main.03b69629.js.map",
+    "static/js/2.235a1d4f.chunk.js": "/coding-contest-info/static/js/2.235a1d4f.chunk.js",
+    "static/js/2.235a1d4f.chunk.js.map": "/coding-contest-info/static/js/2.235a1d4f.chunk.js.map",
+    "static/js/3.cc44f5b8.chunk.js": "/coding-contest-info/static/js/3.cc44f5b8.chunk.js",
+    "static/js/3.cc44f5b8.chunk.js.map": "/coding-contest-info/static/js/3.cc44f5b8.chunk.js.map",
+    "index.html": "/coding-contest-info/index.html",
+    "static/css/main.9d5b29c0.chunk.css.map": "/coding-contest-info/static/css/main.9d5b29c0.chunk.css.map",
+    "static/js/2.235a1d4f.chunk.js.LICENSE.txt": "/coding-contest-info/static/js/2.235a1d4f.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.03b69629.js",
+    "static/js/2.235a1d4f.chunk.js",
+    "static/css/main.9d5b29c0.chunk.css",
+    "static/js/main.6d527b51.chunk.js"
+  ]
+}
