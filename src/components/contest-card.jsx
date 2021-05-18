@@ -23,9 +23,23 @@ const useStyles = makeStyles({
     },
 });
 
+function convertTZ(date, tzString) {
+    return new Date((typeof date === "string" ? new Date(date) : date).toLocaleString("en-US", { timeZone: tzString }));
+}
+
+function dateTimeStr(s) {
+    let datStr = s.slice(0, 10);
+    const date = datStr.split("-");
+    let timStr = s.slice(11, 19);
+    const time = timStr.split(":");
+    return [...date, ...time];
+}
+
 const ContestCard = ({ contest }) => {
     const classes = useStyles();
     const bull = <span className={classes.bullet}>•</span>;
+    const [year, month, dat, hh, mm, ss] = dateTimeStr(contest.start_time);
+    const conDate = convertTZ(`${year}/${month}/${dat} ${hh}:${mm}:${ss} +0000"`, "Asia/Calcutta");
 
     return (
         <Card className={classes.root}>
@@ -42,7 +56,24 @@ const ContestCard = ({ contest }) => {
                     ({contest.site})
                 </Typography>
                 <Typography variant="subtitle1" color="textSecondary">
-                    <b>Duration (Dates)</b>
+                    On{" "}
+                    <b>
+                        {conDate.toLocaleString("en-IN", {
+                            year: "numeric",
+                            month: "numeric",
+                            day: "numeric",
+                        })}
+                    </b>
+                </Typography>
+                <Typography variant="subtitle1" color="textSecondary">
+                    Starts at{" "}
+                    <b>
+                        {conDate.toLocaleString("en-IN", {
+                            hour: "numeric",
+                            minute: "numeric",
+                            hour12: true,
+                        })}
+                    </b>
                 </Typography>
                 <Typography className={classes.title} color="textSecondary" gutterBottom>
                     Duration: &nbsp;
@@ -50,7 +81,9 @@ const ContestCard = ({ contest }) => {
                         {Number(contest.duration) / 3600 < 24 &&
                             `${(Number(contest.duration) / 3600).toFixed(2)} Hour(s)`}
                         {Number(contest.duration) / 3600 >= 24 &&
+                            Number(contest.duration) / (3600 * 24) <= 31 &&
                             `${(Number(contest.duration) / (3600 * 24)).toFixed(2)} Day(s)`}
+                        {Number(contest.duration) / (3600 * 24) > 31 && `> 1 Month`}
                     </b>
                 </Typography>
             </CardContent>
