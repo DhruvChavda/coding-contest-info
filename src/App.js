@@ -3,6 +3,7 @@ import { Component } from "react";
 import SearchAppBar from "./components/app-bar";
 import ContestList from "./components/contest-list";
 import { Typography } from "@material-ui/core";
+import Footer from "./components/footer";
 
 class App extends Component {
     constructor() {
@@ -53,6 +54,7 @@ class App extends Component {
                     </div>
                 )}
                 <ContestList contests={notIn24} />
+                {this.state.data.length!==0 && <Footer/>}
             </div>
         );
     }
